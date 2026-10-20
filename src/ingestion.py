@@ -45,7 +45,6 @@ def fetch_city_weather(city_name,latitude,longitude,start_date,end_date):
             "precipitation_sum": "total_precipitation",
             "wind_speed_10m_max": "max_wind_speed",
         },inplace=True)
-
         df["city"]=city_name
         return df
 

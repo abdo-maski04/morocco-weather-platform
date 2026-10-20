@@ -10,7 +10,7 @@ params = {
     "timezone": "Africa/Casablanca"
 }
 
-response = requests.get(url, params=params, timeout=20)
+response = requests.get(url, params=params, timeout=20) # sert à
 
 print("https status",response.status_code)
 
