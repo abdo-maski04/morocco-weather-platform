@@ -1,8 +1,8 @@
 import json
 
-with open("config/cities.json", "r") as file:
-    cities_data = json.load(file)
+with open("config/cities.json","r") as file:
+    cities=json.load(file)
 
-    for city,coordinates in cities_data.items():
-        print(f"City: {city}, latitude: {coordinates['latitude']}, longitude: {coordinates['longitude']}")
-        print("---------------------")
+for city,coordinates in cities.items():
+    print(f'{city}+" latitude:"+{coordinates["latitude"]}+" longitude:"+{coordinates["longitude"]}+"\n"')
+    print("-------------------------")
