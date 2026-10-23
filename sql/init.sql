@@ -8,7 +8,7 @@ create table if not exists raw.weather_daily (
     mean_temp         numeric(5,2),
     sum_precipitation numeric(6,2),
     max_wind_speed    numeric(5,2),
-    ingested_at       timestamptz  not null default now(),
+    ingested_at       timestamptz  not null default now(), 
     primary key (city, date)
 );
 

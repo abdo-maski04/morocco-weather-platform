@@ -38,9 +38,9 @@ do update set
     ingested_at       = now();
     """
 
-def load_weather(rows):
+def load_weather_rows(rows):
     with get_connection() as conn:
-        with conn.cursor() as cursor:
+        with conn.cursor() as cursor: # sert à 
             cursor.executemany(upsert_query, rows)
             conn.commit()
     return len(rows)
