@@ -44,3 +44,33 @@ def load_weather_rows(rows):
             cursor.executemany(upsert_query, rows)
             conn.commit()
     return len(rows)
+
+def convert_df_to_rows(df):
+    rows = list(
+        df[
+            [
+                "city",
+                "date",
+                "max_temperature",
+                "min_temperature",
+                "mean_temperature",
+                "total_precipitation",
+                "max_wind_speed",
+            ]
+        ].itertuples(index=False, name=None)
+    )
+    return rows
+
+
+def log_ingestion(city,last_loaded_date,status,rows_loaded):
+    query="""
+        insert into raw.ingestion_log
+        (city,last_loaded_date,status,rows_loaded)
+        values(%s,%s,%s,%s)
+        """
+    with get_connection() as conn:
+        with conn.cursor() as cursor:
+            cursor.execute(
+                query,
+                (city,last_loaded_date,status,rows_loaded)
+            )
