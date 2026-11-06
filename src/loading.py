@@ -4,7 +4,7 @@ from datetime import date, timedelta
 import pandas as pd
 import json
 
-initial_start_date = date(2025, 1, 1)
+initial_start_date = date(2024, 1, 1)
 end_date = date.today() - timedelta(5)
 
 

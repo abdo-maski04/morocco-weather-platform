@@ -3,3 +3,8 @@
 __pycache__/
 .pytest_cache/
 docs/
+
+dbt_project/logs/
+dbt_project/morocco_weather/target/
+dbt_project/morocco_weather/dbt_packages/
+dbt_project/morocco_weather/logs/
