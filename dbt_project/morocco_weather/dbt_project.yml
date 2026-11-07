@@ -39,3 +39,7 @@ models:
     marts:
       +materialized: table
       +schema: marts
+
+seeds:
+  morocco_weather:
+    +schema: reference
